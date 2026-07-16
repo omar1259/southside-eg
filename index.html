@@ -884,10 +884,10 @@
                     </div>
                     <div class="form-group">
                         <label id="loginAddressLabel">العنوان التفصيلي</label>
-                        <textarea id="loginAddress" placeholder="شارع، منطقة، مدينة" ></textarea>
-                    </div>   
-                    <button type="button" class="location-btn" id="locationBtn" onclick="getLocation()">📍 تحديد موقعي تلقائياً</button>
-                    <p class="location-status" id="locationStatus" style="color: var(--white-50); font-size: 12px; margin-top: 8px; text-align: center;"></p>
+                        <textarea id="loginAddress" placeholder="شارع، منطقة، مدينة" required></textarea>
+                    </div>
+                    <button type="button" class="location-btn" id="locationBtn" onclick="getLocation()">📍تحديد موقعي تلقائياً</button>
+                    <p class="location-status" id="locationStatus"></p>
                     <button type="submit" class="submit-btn" id="loginSubmit">تأكيد الطلب</button>
                 </form>
             </div>
@@ -1074,7 +1074,7 @@
         // ║  App State                                              ║
         // ═══════════════════════════════════════════════════════════
         let currentLang = 'ar', 
-            cart = JSON.parse(localStorage.getItem('S_cart') || '[]'), 
+            cart = JSON.parse(localStorage.getItem('SS_cart') || '[]'), 
             selectedSizes = {};                
         let favorites = JSON.parse(localStorage.getItem('southside_favorites') || '[]');
         let currentDetailProduct = null;
@@ -1216,7 +1216,6 @@
         }
 
         function updateCart() {
-            localStorage.setItem('S_cart', JSON.stringify(cart));
             const count = cart.reduce((sum, item) => sum + item.qty, 0);
             document.getElementById('cartCount').textContent = count;
             const itemsDiv = document.getElementById('cartItems');
@@ -1380,40 +1379,23 @@
         function closeCheckout() { document.getElementById('checkoutModal').classList.remove('open'); }
         function showSuccess() { document.getElementById('successOverlay').classList.add('open'); }
         function closeSuccess() { document.getElementById('successOverlay').classList.remove('open'); showPage('home'); }
-       function getLocation() {
-    const btn = document.getElementById('locationBtn');
-    const status = document.getElementById('locationStatus');
-    const addressField = document.getElementById('loginAddress'); // الوصول لحقل العنوان
 
-    // 1. تغيير حالة الزر ليعرف المستخدم أن هناك عملية تحدث
-    btn.disabled = true;
-    status.textContent = 'جاري تحديد الموقع...';
-
-    if (!navigator.geolocation) {
-        status.textContent = 'عذراً، متصفحك لا يدعم تحديد الموقع';
-        btn.disabled = false;
-        return;
-    }
-
-    // 2. محاولة الحصول على الموقع
-    navigator.geolocation.getCurrentPosition(
-        function(position) {
-            userLocation = { lat: position.coords.latitude, lng: position.coords.longitude };
-            
-            // 3. الحركة الأهم: وضع الإحداثيات داخل مربع العنوان مباشرة
-            // بدلنا مجرد رسالة النجاح، بملء الحقل
-            addressField.value = `الموقع الحالي: ${userLocation.lat}, ${userLocation.lng}`;
-            
-            status.textContent = 'تم تحديد الموقع بنجاح!';
-            btn.innerHTML = '✅ تم التحديد';
-            btn.disabled = false;
-        },
-        function(error) { 
-            status.textContent = 'فشل تحديد الموقع، يرجى كتابته يدوياً'; 
-            btn.disabled = false; 
+        function getLocation() {
+            const btn = document.getElementById('locationBtn');
+            const status = document.getElementById('locationStatus');
+            btn.disabled = true;
+            status.textContent = currentLang === 'ar' ? 'جاري تحديد الموقع...' : 'Detecting...';
+            if (!navigator.geolocation) { status.textContent = t[currentLang].locationError; btn.disabled = false; return; }
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    userLocation = { lat: position.coords.latitude, lng: position.coords.longitude };
+                    status.textContent = t[currentLang].locationSuccess;
+                    btn.innerHTML = '✅ ' + (currentLang === 'ar' ? 'تم التحديد' : 'Detected');
+                },
+                function(error) { status.textContent = t[currentLang].locationError; btn.disabled = false; }
+            );
         }
-    );
-}
+
         // ═══════════════════════════════════════════════════════════
         // ║  Checkout - يرسل للشيت ولواتساب                       ║
         // ═══════════════════════════════════════════════════════════
@@ -1423,7 +1405,7 @@
             const phone = document.getElementById('loginPhone').value.trim();
             const email = document.getElementById('loginEmail').value.trim();
             const address = document.getElementById('loginAddress').value.trim();
-            if (!name || !phone || !email ) { showToast(currentLang === 'ar' ? 'اكمل كل البيانات' : 'Fill all fields'); return; }
+            if (!name || !phone || !email || !address) { showToast(currentLang === 'ar' ? 'اكمل كل البيانات' : 'Fill all fields'); return; }
 
             const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
             const items = cart.map(item => ({
@@ -1646,9 +1628,6 @@
             originalToggleFav();
             setTimeout(unlockBodyScroll, 100);
         };
-        window.addEventListener('load', function() {
-            updateCart();
-        });
 </script>
 </body>
 </html>
