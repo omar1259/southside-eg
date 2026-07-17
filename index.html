@@ -698,10 +698,9 @@
             <h2 class="section-title" id="shopTitle">المتجر</h2>
         </div>
         <div class="filter-bar">
-            <button class="filter-chip active" onclick="filterProducts('all', this)" id="filterAll">الكل</button>
-            <button class="filter-chip" onclick="filterProducts('tees', this)" id="filterTees">T-Shirts</button>
-            <button class="filter-chip" onclick="filterProducts('pants', this)" id="filterPants">pants</button>
-            <button class="filter-chip" onclick="filterProducts('hoodies', this)" id="filterHoodies">hoodies</button>
+            <button class="filter-chip" onclick="filterProducts('jeans', this)" id="filterJeans">جينز</button>
+            <button class="filter-chip" onclick="filterProducts('milton', this)" id="filterMilton">ميلتون</button>
+            <button class="filter-chip" onclick="filterProducts('tees', this)" id="filterTees">تيشرتات</button>
         </div>
         <div class="products-section"><div class="products-grid" id="productGrid"></div></div>
     </div>
@@ -884,7 +883,7 @@
                     </div>
                     <div class="form-group">
                         <label id="loginAddressLabel">العنوان التفصيلي</label>
-                        <textarea id="loginAddress" placeholder="شارع، منطقة، مدينة" required></textarea>
+                        <textarea id="loginAddress" placeholder="شارع، منطقة، مدينة"></textarea>
                     </div>
                     <button type="button" class="location-btn" id="locationBtn" onclick="getLocation()">📍تحديد موقعي تلقائياً</button>
                     <p class="location-status" id="locationStatus"></p>
@@ -991,16 +990,16 @@
                 this.products = [
                     { id: 1, ar: { name: "تيشيرت أوفرسايزد أسود", price: 500 }, en: { name: "Oversized Black T-shirt", price: 500 }, category: "tees", images: ["Oversized T-Shirt black.jpg"], sizes: ["S","M","L","XL"], badge: "bestseller" },
                     { id: 2, ar: { name: "تيشيرت بوكس فيت اسود", price: 500 }, en: { name: "Black Box Fit ", price: 500 }, category: "tees", images: ["BOX FIT T-SHIRT black.jpg"], sizes: ["S","M","L","XL"], badge: "new" },
-                    { id: 4, ar: { name: "جينز ويد ليج اسود", price: 650 }, en: { name: "Wide Leg Black Jeans", price: 650 }, category: "pants", images: ["https://i.imgur.com/kF8jEte.jpeg","https://i.imgur.com/Kklqv5O.jpeg","https://i.imgur.com/aSwhtY8.jpeg"], sizes: ["32","34","36"], badge: "new" },
+                    { id: 4, ar: { name: "جينز ويد ليج اسود", price: 650 }, en: { name: "Wide Leg Black Jeans", price: 650 }, category: "jeans", images: ["https://i.imgur.com/kF8jEte.jpeg","https://i.imgur.com/Kklqv5O.jpeg","https://i.imgur.com/aSwhtY8.jpeg"], sizes: ["32","34","36"], badge: "new" },
                     { id: 3, ar: { name: "تيشيرت بوكس فيت رمادي", price: 500 }, en: { name: "Gray Box Fit ", price: 500 }, category: "tees", images: ["BOX FIT T-SHIRT-gray.jpg"], sizes: ["S","M","L","XL"], badge: "new" },
                     { id: 5, ar: { name: "تيشيرت بوكس فيت عنابي بحواف بيضاء ", price: 500 }, en: { name: "RINGER T-SHIRT Burgundy ", price: 500 }, category: "tees", images: ["RINGER T-SHIRT  burgundy.jpg"], sizes: ["S","M","L","XL"], badge: "new" },
                     { id: 6, ar: { name: "تيشيرت بوكس فيت زيتي بحواف بيضاء ", price: 500 }, en: { name: "RINGER T-SHIRT olive ", price: 500 }, category: "tees", images: ["RINGER T-SHIRT olive.jpg"], sizes: ["S","M","L","XL"], badge: "new" },
-                    { id: 7, ar: { name: "ميلتون اسود ", price: 500 }, en: { name: "black milton", price: 500 }, category: "pants", images: ["milton-black-front.jpg","milton-black-side.jpg"], sizes: ["32","34","36"], badge: "new" },
+                    { id: 7, ar: { name: "ميلتون اسود ", price: 500 }, en: { name: "black milton", price: 500 }, category: "milton", images: ["milton-black-front.jpg","milton-black-side.jpg"], sizes: ["32","34","36"], badge: "new" },
                     { id: 8, ar: { name: "تيشيرت أوفرسايزد ابيض", price: 500 }, en: { name: "Oversized White T-shirt", price: 500 }, category: "tees", images: ["Oversized T-Shirt white.jpg"], sizes: ["S","M","L","XL"], badge: "bestseller" },
                     { id: 9, ar: { name: "تيشيرت أوفرسايزد زيتي", price: 500 }, en: { name: "Oversized Olive T-shirt", price: 500 }, category: "tees", images: ["Oversized T-Shirt olive.jpg"], sizes: ["S","M","L","XL"], badge: "bestseller" },
                     { id: 10, ar: { name: "تيشيرت أوفرسايزد عنابي", price: 500 }, en: { name: "Oversized Burgundy T-shirt", price: 500 }, category: "tees", images: ["Oversized T-Shirt burgundy.jpg"], sizes: ["S","M","L","XL"], badge: "bestseller" },
-                    { id: 11, ar: { name: "جينز ويد ليج ازرق فاتح", price: 650 }, en: { name: "Wide Leg lightblue Jeans", price: 650 }, category: "pants", images: ["jeans-lightblue-front.jpeg","jeans-lightblue-side.jpeg"], sizes: ["32","34","36"], badge: "new" },
-                    { id: 12, ar: { name: "جينز ويد ليج حديدي", price: 650 }, en: { name: "Wide Leg Light Wash Jeans", price: 650 }, category: "pants", images: ["Wide Leg Light Wash Jeans-front.jpeg","Wide Leg Light Wash Jeans-side.jpeg"], sizes: ["32","34","36"], badge: "new" },
+                    { id: 11, ar: { name: "جينز ويد ليج ازرق فاتح", price: 650 }, en: { name: "Wide Leg lightblue Jeans", price: 650 }, category: "jeans", images: ["jeans-lightblue-front.jpeg","jeans-lightblue-side.jpeg"], sizes: ["32","34","36"], badge: "new" },
+                    { id: 12, ar: { name: "جينز ويد ليج حديدي", price: 650 }, en: { name: "Wide Leg Light Wash Jeans", price: 650 }, category: "jeans", images: ["Wide Leg Light Wash Jeans-front.jpeg","Wide Leg Light Wash Jeans-side.jpeg"], sizes: ["32","34","36"], badge: "new" },
 
                 ];
                 this.featuredIds = [1, 2, 12, 7, 8, 3, 5];
@@ -1078,6 +1077,7 @@
             selectedSizes = {};                
         let favorites = JSON.parse(localStorage.getItem('southside_favorites') || '[]');
         let currentDetailProduct = null;
+        let userLocation = null;
 
         const t = {
             ar: {
@@ -1085,7 +1085,7 @@
                 favTitle: 'المفضلة', emptyFavText: 'مفضلتك فاضية', favoriteBtn: 'المفضلة', viewItem: 'عرض', removeItem: 'حذف',
                 heroLabel: 'خطوة من جنوب', heroTitle: 'ملابس مصرية<br><span>بروح الجنوب</span>',heroBtn1: 'تسوق الآن', heroBtn2: 'اكتشف المزيد',
                 banner: 'الشحن المجاني لأول 10 طلبات — استخدم كود: DUNE10', featuredTitle: 'الأكثر مبيعاً', viewAll: 'عرض الكل', bannerTitle: 'صناعة <span>مصرية</span>', bannerText: 'كل حذاء بيحكي قصة. قصة كفاح، قصة فخر، قصة إننا قادرين نعمل حاجة تنافس العالم.', bannerBtn: 'قصتنا',
-                filterAll: 'الكل', filterLow: 'أقل من 500', filterHigh: '500 وأكتر', toast: 'تمت الإضافة للسلة', selectSize: 'اختر مقاس',
+                filterJeans: 'جينز', filterMilton: 'ميلتون', filterTees: 'تيشرتات', toast: 'تمت الإضافة للسلة', selectSize: 'اختر مقاس',
                 aboutTitle: 'عن Dune', aboutText1: 'Dune براند مصري 100%، من صناعة يد مصرية في قلب الصعيد.', aboutText2: 'كل حذاء بيحكي قصة. قصة كفاح، قصة فخر، قصة إننا قادرين نعمل حاجة تنافس العالم.', aboutText3: 'مش بس بنعمل أحذية، بنبني هوية. خطوة من جنوب مش مجرد شعار، دي فلسفة.', aboutValues: 'قيمنا',
                 shippingTitle: 'الشحن والإرجاع', shippingPolicy: 'سياسة الشحن', returnPolicy: 'سياسة الإرجاع',
                 contactTitle: 'اتصل بنا', contactText: 'عندك سؤال؟ كلمنا!', labelName: 'الاسم', labelEmail: 'الإيميل', labelMessage: 'الرسالة', submitBtn: 'إرسال',
@@ -1101,7 +1101,7 @@
                 favTitle: 'Favorites', emptyFavText: 'Your favorites list is empty', favoriteBtn: 'Favorite', viewItem: 'View', removeItem: 'Remove',
                 heroLabel: 'A STEP FROM THE SOUTH', heroTitle: 'Egyptian clothes<br><span>With a Southern Soul</span>', heroBtn1: 'Shop Now', heroBtn2: 'Learn More',
                 banner: 'Free shipping on first 10 orders — Use code: DUNE10', featuredTitle: 'Best Sellers', viewAll: 'View All', bannerTitle: 'Egyptian <span>Craft</span>', bannerText: 'Every shoe tells a story. A story of struggle, pride, and the ability to compete with the world.', bannerBtn: 'Our Story',
-                filterAll: 'All', filterLow: 'Under 500', filterHigh: '500+', toast: 'Added to cart', selectSize: 'Select size',
+                filterJeans: 'Jeans', filterMilton: 'Milton', filterTees: 'T-Shirts', toast: 'Added to cart', selectSize: 'Select size',
                 aboutTitle: 'About Dune', aboutText1: 'Dune is 100% Egyptian, handmade in the heart of Upper Egypt.', aboutText2: 'Every shoe tells a story. A story of struggle, pride, and the ability to compete with the world.', aboutText3: 'We don\'t just make shoes, we build identity. "A step from the south" is not just a slogan, it\'s a philosophy.', aboutValues: 'Our Values',
                 shippingTitle: 'Shipping & Returns', shippingPolicy: 'Shipping Policy', returnPolicy: 'Return Policy',
                 contactTitle: 'Contact Us', contactText: 'Have a question? Want to order in bulk? Reach out!', labelName: 'Name', labelEmail: 'Email', labelMessage: 'Message', submitBtn: 'Send',
@@ -1134,7 +1134,7 @@
             document.getElementById('topBar').style.display = isAdmin ? 'none' : 'block';
             document.getElementById('mainHeader').style.display = isAdmin ? 'none' : 'block';
 
-            if (pageName === 'shop') renderProducts('all');
+            if (pageName === 'shop') renderProducts('none');
             if (pageName === 'admin') loadOrders();
         }
 
@@ -1184,6 +1184,7 @@
             const grid = document.getElementById('productGrid');
             if (!grid) return;
             grid.innerHTML = '';
+            if (!filterType || filterType === 'none') return;
             const filtered = productManager.getByCategory(filterType);
             filtered.forEach(p => { grid.innerHTML += renderProductCard(p, true); });
         }
@@ -1198,7 +1199,7 @@
         function selectSize(productId, size) {
             selectedSizes[productId] = size;
             const activeFilter = document.querySelector('#page-shop .filter-chip.active');
-            const filterType = activeFilter ? (activeFilter.getAttribute('data-filter') || 'all') : 'all';
+            const filterType = activeFilter ? (activeFilter.getAttribute('data-filter') || 'none') : 'none';
             renderProducts(filterType);
             if (currentDetailProduct === productId) refreshDetailState(productId);
         }
@@ -1237,6 +1238,7 @@
             const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
             document.getElementById('cartSubtotal').textContent = subtotal + ' EGP';
             document.getElementById('cartTotal').textContent = subtotal + ' EGP';
+            try { localStorage.setItem('SS_cart', JSON.stringify(cart)); } catch(e) {}
         }
 
         function changeQty(index, delta) {
@@ -1267,7 +1269,7 @@
             renderFavDrawer();
             renderFeatured();
             const activeFilter = document.querySelector('#page-shop .filter-chip.active');
-            renderProducts(activeFilter ? (activeFilter.getAttribute('data-filter') || 'all') : 'all');
+            renderProducts(activeFilter ? (activeFilter.getAttribute('data-filter') || 'none') : 'none');
             if (currentDetailProduct === productId) refreshDetailState(productId);
         }
 
@@ -1381,19 +1383,44 @@
         function closeSuccess() { document.getElementById('successOverlay').classList.remove('open'); showPage('home'); }
 
         function getLocation() {
-            const btn = document.getElementById('locationBtn');
-            const status = document.getElementById('locationStatus');
-            btn.disabled = true;
-            status.textContent = currentLang === 'ar' ? 'جاري تحديد الموقع...' : 'Detecting...';
-            if (!navigator.geolocation) { status.textContent = t[currentLang].locationError; btn.disabled = false; return; }
-            navigator.geolocation.getCurrentPosition(
-                function(position) {
-                    userLocation = { lat: position.coords.latitude, lng: position.coords.longitude };
-                    status.textContent = t[currentLang].locationSuccess;
-                    btn.innerHTML = '✅ ' + (currentLang === 'ar' ? 'تم التحديد' : 'Detected');
-                },
-                function(error) { status.textContent = t[currentLang].locationError; btn.disabled = false; }
-            );
+            return new Promise(function(resolve) {
+                const btn = document.getElementById('locationBtn');
+                const status = document.getElementById('locationStatus');
+                if (btn) btn.disabled = true;
+                if (status) status.textContent = currentLang === 'ar' ? 'جاري تحديد الموقع...' : 'Detecting...';
+                if (!navigator.geolocation) {
+                    if (status) status.textContent = t[currentLang].locationError;
+                    if (btn) btn.disabled = false;
+                    resolve(false);
+                    return;
+                }
+                // timeout حماية لو المستخدم ماردش على البوب أب
+                const options = { enableHighAccuracy: true, timeout: 8000, maximumAge: 0 };
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        const lat = position.coords.latitude, lng = position.coords.longitude;
+                        userLocation = { lat: lat, lng: lng };
+                        const addr = document.getElementById('loginAddress');
+                        const coordsText = 'الموقع (GPS): ' + lat.toFixed(6) + ', ' + lng.toFixed(6) +
+                            '\nhttps://maps.google.com/?q=' + lat + ',' + lng;
+                        if (addr) {
+                            addr.value = addr.value.trim() ? (addr.value.trim() + '\n' + coordsText) : coordsText;
+                        }
+                        if (status) status.textContent = t[currentLang].locationSuccess;
+                        if (btn) {
+                            btn.innerHTML = '✅ ' + (currentLang === 'ar' ? 'تم التحديد' : 'Detected');
+                            btn.disabled = false;
+                        }
+                        resolve(true);
+                    },
+                    function(error) {
+                        if (status) status.textContent = t[currentLang].locationError;
+                        if (btn) btn.disabled = false;
+                        resolve(false);
+                    },
+                    options
+                );
+            });
         }
 
         // ═══════════════════════════════════════════════════════════
@@ -1404,8 +1431,31 @@
             const name = document.getElementById('loginName').value.trim();
             const phone = document.getElementById('loginPhone').value.trim();
             const email = document.getElementById('loginEmail').value.trim();
-            const address = document.getElementById('loginAddress').value.trim();
-            if (!name || !phone || !email || !address) { showToast(currentLang === 'ar' ? 'اكمل كل البيانات' : 'Fill all fields'); return; }
+            let address = document.getElementById('loginAddress').value.trim();
+            if (!name || !phone || !email) { showToast(currentLang === 'ar' ? 'اكمل الاسم والتليفون والإيميل' : 'Fill name, phone and email'); return; }
+
+            // لو العنوان فاضي، جرّب تجيب الموقع تلقائياً قبل الإرسال
+            if (!address) {
+                const submitBtn = document.getElementById('loginSubmit');
+                const oldText = submitBtn ? submitBtn.textContent : '';
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = currentLang === 'ar' ? 'جاري تحديد الموقع...' : 'Detecting location...';
+                }
+                try {
+                    const ok = await getLocation();
+                    if (!ok) {
+                        showToast(currentLang === 'ar' ? 'تعذّر تحديد الموقع، هيتم الإرسال بدون عنوان' : 'Could not detect location, submitting without address');
+                    }
+                } catch (err) {
+                    showToast(currentLang === 'ar' ? 'تعذّر تحديد الموقع، هيتم الإرسال بدون عنوان' : 'Could not detect location, submitting without address');
+                }
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = oldText;
+                }
+                address = document.getElementById('loginAddress').value.trim();
+            }
 
             const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
             const items = cart.map(item => ({
@@ -1515,7 +1565,7 @@
             document.getElementById('btnAr').classList.toggle('active', lang === 'ar');
             document.getElementById('btnEn').classList.toggle('active', lang === 'en');
 
-            const ids = ['topBar','heroLabel','heroTitle','heroSub','heroBtn1','heroBtn2','featuredTitle','viewAll','bannerTitle','bannerText','bannerBtn','cartTitle','checkoutBtn','filterAll','filterTees','filterPants','filterHoodies','emptyCartText','favTitle','emptyFavText','aboutTitle','aboutText1','aboutText2','aboutText3','aboutValues','shippingTitle','shippingPolicy','returnPolicy','contactTitle','contactText','labelName','labelEmail','labelMessage','submitBtn','loginTitle','loginSub','loginNameLabel','loginPhoneLabel','loginEmailLabel','loginAddressLabel','loginSubmit','footerAboutText','footerProducts','footerSupport','footerFollow','shopTitle','successTitle','successText'];
+            const ids = ['topBar','heroLabel','heroTitle','heroSub','heroBtn1','heroBtn2','featuredTitle','viewAll','bannerTitle','bannerText','bannerBtn','cartTitle','checkoutBtn','filterJeans','filterMilton','filterTees','emptyCartText','favTitle','emptyFavText','aboutTitle','aboutText1','aboutText2','aboutText3','aboutValues','shippingTitle','shippingPolicy','returnPolicy','contactTitle','contactText','labelName','labelEmail','labelMessage','submitBtn','loginTitle','loginSub','loginNameLabel','loginPhoneLabel','loginEmailLabel','loginAddressLabel','loginSubmit','footerAboutText','footerProducts','footerSupport','footerFollow','shopTitle','successTitle','successText'];
             
             ids.forEach(id => {
                 const el = document.getElementById(id);
@@ -1533,7 +1583,7 @@
 
             renderFeatured();
             const activeFilter = document.querySelector('#page-shop .filter-chip.active');
-            renderProducts(activeFilter ? (activeFilter.getAttribute('data-filter') || 'all') : 'all');
+            renderProducts(activeFilter ? (activeFilter.getAttribute('data-filter') || 'none') : 'none');
             updateCart();
             updateFavCount();
             renderFavDrawer();
@@ -1543,10 +1593,9 @@
         // ═══════════════════════════════════════════════════════════
         // ║  Init                                                   ║
         // ═══════════════════════════════════════════════════════════
-        document.getElementById('filterAll').setAttribute('data-filter', 'all');
+        document.getElementById('filterJeans').setAttribute('data-filter', 'jeans');
+        document.getElementById('filterMilton').setAttribute('data-filter', 'milton');
         document.getElementById('filterTees').setAttribute('data-filter', 'tees');
-        document.getElementById('filterPants').setAttribute('data-filter', 'pants');
-        document.getElementById('filterHoodies').setAttribute('data-filter', 'hoodies');
 
         const savedUser = localStorage.getItem('southside_user');
         if (savedUser) {
@@ -1562,7 +1611,7 @@
             await productManager.loadFromSheet();
             document.getElementById('loadingOverlay').classList.add('hidden');
             renderFeatured();
-            renderProducts('all');
+            renderProducts('none');
             updateFavCount();
             renderFavDrawer();
         }
